@@ -1,0 +1,72 @@
+
+    body {
+      margin: 0;
+      background-image: linear-gradient( 180.4deg,  rgba(0,6,10,1) 1%, rgba(1,190,237,1) 91.4% );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .eyes {
+      display: flex;
+      gap: 50px;
+    }
+
+    .eye {
+      width: 100px;
+      height: 100px;
+      background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+      border: 4px solid #591c1c;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      animation: blink 5s infinite;
+    }
+
+    .pupil {
+      width: 30px;
+      height: 30px;
+     background-image: linear-gradient( 135deg, #232222 10%, #26272e 100%);
+      border-radius: 50%;
+      position: absolute;
+      top: 35px;
+      left: 35px;
+      transition: top 0.05s, left 0.05s;
+    }
+
+    .lid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 2;
+      transform: translateY(-100%);
+      animation: blink-lid 5s infinite;
+    }
+
+    @keyframes blink-lid {
+      0%, 95%, 100% {
+        transform: translateY(-100%);
+      }
+      97%, 98% {
+        transform: translateY(0%);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .eye {
+        width: 70px;
+        height: 70px;
+      }
+
+      .pupil {
+        width: 20px;
+        height: 20px;
+        top: 25px;
+        left: 25px;
+      }
+    }
+  
